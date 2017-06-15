@@ -1,0 +1,58 @@
+{
+  "name": "sy666",
+  "version": "0.1.2",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build && npm run tslint",
+    "build": "npm run build-ts && npm run copy-d",
+    "build-ts": "tsc -p .",
+    "copy-d": "cpx \"index.d.ts\" \"dist/\"",
+    "test": "jest",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suyu0925/sy666.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suyu0925/sy666/issues"
+  },
+  "homepage": "https://github.com/suyu0925/sy666#readme",
+  "devDependencies": {
+    "@types/debug": "0.0.29",
+    "@types/dotenv": "^4.0.0",
+    "@types/iconv-lite": "0.0.1",
+    "@types/jest": "^19.2.4",
+    "@types/node": "^7.0.31",
+    "@types/request": "0.0.43",
+    "cpx": "^1.5.0",
+    "debug": "^2.6.8",
+    "dotenv": "^4.0.0",
+    "jest": "^20.0.4",
+    "moment": "^2.18.1",
+    "ts-jest": "^20.0.6",
+    "tslint": "^5.4.3",
+    "typescript": "^2.3.4"
+  },
+  "dependencies": {
+    "geo-mobile": "^0.1.2",
+    "iconv-lite": "^0.4.18",
+    "request": "^2.81.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  }
+}
