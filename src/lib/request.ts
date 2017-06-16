@@ -199,7 +199,7 @@ export async function getBalance(option: IOption): Promise<IYEResponse> {
 
 export async function charge(account: IOption, option: IChargeOption): Promise<ICZResponse> {
   // orderId can have space character
-  if (option.orderId.indexOf(' ')) {
+  if (option.orderId.indexOf(' ') !== -1) {
     throw new Error('orderId can not contain space character')
   }
   const chargeCash = await getChargeCash(option.package, option.phone)

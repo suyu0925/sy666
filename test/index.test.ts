@@ -18,7 +18,8 @@ const option: IOption = {
   url: process.env.url
 }
 const chargeEnable = process.env.charge === 'true'
-const chargePhone = process.env.phone
+const chargePhone = process.env.chargePhone
+const roaming = process.env.roaming === 'true'
 const cancelingOutTradeNo = process.env.cancelingOutTradeNo
 const doneOutTradeNo = process.env.doneOutTradeNo
 
@@ -41,7 +42,7 @@ describe('index', () => {
 
   test('charge', async () => {
     if (chargeEnable) {
-      const result = await sy666.charge(chargePhone, 30, createOrder(), false)
+      const result = await sy666.charge(chargePhone, 30, createOrder(), roaming)
       log('charge: %j', result)
     } else {
       log('skip charge')
